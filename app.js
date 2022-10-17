@@ -20,7 +20,7 @@ const logger = winston.createLogger({
     try {
         await app.client.chat.postMessage({
             token: process.env.SLACK_BOT_TOKEN,
-            channel: "045KDU4M53",
+            channel: process.env.CHANNEL_ID || '',
             message: "Hello World",
         });
         logger.info("Message sent.");
